@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 Game Giáng Sinh - Bắt Quà Noel 🎁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="snow-container">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>🎄 GAME BẮT QUÀ NOEL 🎁</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="label">Điểm:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Thời gian:</span>
+                    <span class="value" id="timer">60</span>
+                </div>
+                <div class="score-item">
+                    <span class="label">Cao nhất:</span>
+                    <span class="value" id="highscore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-screen" id="gameScreen">
+            <div class="start-screen" id="startScreen">
+                <div class="start-content">
+                    <h2>🎅 Chào Mừng Giáng Sinh! 🎅</h2>
+                    <p>Hãy di chuyển ông già Noel để bắt những món quà rơi xuống!</p>
+                    <div class="instructions">
+                        <p>⬅️ Phím mũi tên TRÁI để di chuyển sang trái</p>
+                        <p>➡️ Phím mũi tên PHẢI để di chuyển sang phải</p>
+                        <p>🎁 Bắt quà: +10 điểm</p>
+                        <p>💣 Tránh bom: -5 điểm</p>
+                    </div>
+                    <button class="start-button" id="startButton">BẮT ĐẦU CHƠI</button>
+                </div>
+            </div>
+
+            <div class="game-area" id="gameArea">
+                <div class="santa" id="santa">🎅</div>
+            </div>
+
+            <div class="game-over-screen" id="gameOverScreen">
+                <div class="game-over-content">
+                    <h2>🎄 GAME OVER 🎄</h2>
+                    <p class="final-score">Điểm của bạn: <span id="finalScore">0</span></p>
+                    <p class="message" id="message">Chúc mừng Giáng sinh!</p>
+                    <button class="restart-button" id="restartButton">CHƠI LẠI</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>🎄 Chúc bạn có một mùa Giáng sinh vui vẻ! 🎄</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
