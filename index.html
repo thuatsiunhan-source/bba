@@ -3,74 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎄 Game Giáng Sinh - Bắt Quà Noel 🎁</title>
+    <title>LuxeGems - Trang Sức Cao Cấp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="snow-container">
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❆</div>
-    </div>
-
-    <div class="container">
-        <header class="header">
-            <h1>🎄 GAME BẮT QUÀ NOEL 🎁</h1>
-            <div class="score-board">
-                <div class="score-item">
-                    <span class="label">Điểm:</span>
-                    <span class="value" id="score">0</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>LuxeGems</h1>
+                    <p class="tagline">Luxury Jewelry</p>
                 </div>
-                <div class="score-item">
-                    <span class="label">Thời gian:</span>
-                    <span class="value" id="timer">60</span>
-                </div>
-                <div class="score-item">
-                    <span class="label">Cao nhất:</span>
-                    <span class="value" id="highscore">0</span>
-                </div>
-            </div>
-        </header>
-
-        <div class="game-screen" id="gameScreen">
-            <div class="start-screen" id="startScreen">
-                <div class="start-content">
-                    <h2>🎅 Chào Mừng Giáng Sinh! 🎅</h2>
-                    <p>Hãy di chuyển ông già Noel để bắt những món quà rơi xuống!</p>
-                    <div class="instructions">
-                        <p>⬅️ Phím mũi tên TRÁI để di chuyển sang trái</p>
-                        <p>➡️ Phím mũi tên PHẢI để di chuyển sang phải</p>
-                        <p>🎁 Bắt quà: +10 điểm</p>
-                        <p>💣 Tránh bom: -5 điểm</p>
-                    </div>
-                    <button class="start-button" id="startButton">BẮT ĐẦU CHƠI</button>
-                </div>
-            </div>
-
-            <div class="game-area" id="gameArea">
-                <div class="santa" id="santa">🎅</div>
-            </div>
-
-            <div class="game-over-screen" id="gameOverScreen">
-                <div class="game-over-content">
-                    <h2>🎄 GAME OVER 🎄</h2>
-                    <p class="final-score">Điểm của bạn: <span id="finalScore">0</span></p>
-                    <p class="message" id="message">Chúc mừng Giáng sinh!</p>
-                    <button class="restart-button" id="restartButton">CHƠI LẠI</button>
+                
+                <nav class="nav" id="nav">
+                    <a href="#home" class="nav-link active">Trang Chủ</a>
+                    <a href="#products" class="nav-link">Sản Phẩm</a>
+                    <a href="#about" class="nav-link">Về Chúng Tôi</a>
+                    <a href="#contact" class="nav-link">Liên Hệ</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <span class="cart-icon">🛍️</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </div>
+    </header>
 
-        <footer class="footer">
-            <p>🎄 Chúc bạn có một mùa Giáng sinh vui vẻ! 🎄</p>
-        </footer>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Vẻ Đẹp Vượt Thời Gian</h2>
+                <p class="hero-subtitle">Khám phá bộ sưu tập trang sức cao cấp được chế tác tinh xảo từ những viên kim cương và đá quý quý hiếm nhất</p>
+                <a href="#products" class="btn btn-primary">Khám Phá Ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-grid">
+                <div class="category-card" data-category="nhan">
+                    <div class="category-icon">💍</div>
+                    <h3>Nhẫn</h3>
+                    <p>Nhẫn kim cương & đá quý</p>
+                </div>
+                <div class="category-card" data-category="day-chuyen">
+                    <div class="category-icon">📿</div>
+                    <h3>Dây Chuyền</h3>
+                    <p>Dây chuyền sang trọng</p>
+                </div>
+                <div class="category-card" data-category="bong-tai">
+                    <div class="category-icon">✨</div>
+                    <h3>Bông Tai</h3>
+                    <p>Bông tai tinh tế</p>
+                </div>
+                <div class="category-card" data-category="vong-tay">
+                    <div class="category-icon">⭕</div>
+                    <h3>Vòng Tay</h3>
+                    <p>Vòng tay đẳng cấp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bộ Sưu Tập Nổi Bật</h2>
+                <p class="section-subtitle">Những tác phẩm nghệ thuật được chế tác thủ công</p>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tất Cả</button>
+                <button class="filter-btn" data-filter="nhan">Nhẫn</button>
+                <button class="filter-btn" data-filter="day-chuyen">Dây Chuyền</button>
+                <button class="filter-btn" data-filter="bong-tai">Bông Tai</button>
+                <button class="filter-btn" data-filter="vong-tay">Vòng Tay</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Về LuxeGems</h2>
+                    <p>Với hơn 30 năm kinh nghiệm trong ngành trang sức cao cấp, LuxeGems tự hào là địa chỉ tin cậy của những người sành điệu và yêu thích vẻ đẹp tinh tế.</p>
+                    <p>Mỗi sản phẩm của chúng tôi đều được chế tác thủ công bởi những nghệ nhân tài ba, sử dụng những viên kim cương và đá quý được tuyển chọn kỹ lưỡng từ khắp nơi trên thế giới.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Chất Lượng Đảm Bảo</h4>
+                                <p>100% kim cương và đá quý thiên nhiên</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Bảo Hành Trọn Đời</h4>
+                                <p>Bảo hành và chăm sóc miễn phí</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">
+                                <h4>Thiết Kế Độc Quyền</h4>
+                                <p>Tư vấn và thiết kế theo yêu cầu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">💎</div>
+                        <p>Trang sức cao cấp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+                <p class="section-subtitle">Chúng tôi luôn sẵn sàng tư vấn và hỗ trợ bạn</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Địa Chỉ</h4>
+                            <p>123 Đường Lê Lợi, Quận 1, TP.HCM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Điện Thoại</h4>
+                            <p>+84 123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@luxegems.vn</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>Giờ Làm Việc</h4>
+                            <p>Thứ 2 - Chủ Nhật: 9:00 - 21:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Họ và tên" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="tel" placeholder="Số điện thoại" required>
+                        <textarea placeholder="Nội dung tin nhắn" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LuxeGems</h3>
+                    <p>Trang sức cao cấp cho những khoảnh khắc đáng nhớ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="#home">Trang Chủ</a></li>
+                        <li><a href="#products">Sản Phẩm</a></li>
+                        <li><a href="#about">Về Chúng Tôi</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Chính Sách</h4>
+                    <ul>
+                        <li><a href="#">Chính Sách Bảo Hành</a></li>
+                        <li><a href="#">Chính Sách Đổi Trả</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Theo Dõi Chúng Tôi</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LuxeGems. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Giỏ Hàng</h3>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- Cart items will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Tổng cộng:</span>
+                    <span class="total-price" id="totalPrice">0đ</span>
+                </div>
+                <button class="btn btn-primary btn-block">Thanh Toán</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content modal-large">
+            <button class="close-btn" id="closeProduct">&times;</button>
+            <div class="product-detail" id="productDetail">
+                <!-- Product details will be inserted here -->
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
